@@ -1,0 +1,12 @@
+version: "3"
+
+tasks:
+  run:
+    desc: Run the app locally
+    cmds:
+      - php ./src/artisan serve
+  
+  install-dependency:
+    desc: Install dependency
+    cmds:
+      - cd ./src && composer install
