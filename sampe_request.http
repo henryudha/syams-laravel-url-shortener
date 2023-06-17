@@ -1,0 +1,18 @@
+@baseUrl = http://localhost:8000/api/v1
+
+### Create user
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+  "name": "test1",
+  "email": "test08@dev.test",
+  "password": "testtest",
+  "role": "super_admin"
+}
+
+### Get all user
+GET {{baseUrl}}/users
+
+### Get all user by id
+GET {{baseUrl}}/users/1

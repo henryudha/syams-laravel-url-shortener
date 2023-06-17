@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('click_stats', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('shorten_url_id')->constrained('shorten_urls')->cascadeOnUpdate()->noActionOnDelete();
+            $table->foreignId('shortened_url_id')->constrained('shortened_urls')->cascadeOnUpdate()->noActionOnDelete();
             $table->timestamp('accessed_at');
             $table->ipAddress();
             $table->text('user_agent');
