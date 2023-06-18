@@ -11,7 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::table('users', function(Blueprint $table) {
+            $table->enum('is_active', [1, 0])->after('password')->default(0);
+            $table->foreignId('role_id')->after('is_active')->constrained('users')->noActionOnDelete()->cascadeOnUpdate();
+        });
     }
 
     /**
@@ -19,6 +22,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::table('users', function(Blueprint $table) {
+            $table->dropColumn('is_active');
+            $table->dropColumn('role_id');
+        });
     }
 };

@@ -10,3 +10,13 @@ tasks:
     desc: Install dependency
     cmds:
       - cd ./src && composer install
+
+  migrate:
+    desc: Run database migration
+    cmds:
+      - php ./src/artisan migrate && php ./src/artisan db:seed
+
+  rollback:
+    desc: Run migration rollback
+    cmds:
+      - php ./src/artisan migrate:rollback
