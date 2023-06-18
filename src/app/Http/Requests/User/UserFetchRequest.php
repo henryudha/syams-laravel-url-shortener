@@ -29,7 +29,6 @@ class UserFetchRequest extends FormRequest
     }
 
     public function validationData() {
-        // return $this->query()->all();
         return $this->query->all();
     }
 
